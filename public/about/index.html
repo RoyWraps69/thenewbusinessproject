@@ -895,6 +895,254 @@ body::after{
   border-bottom:1px solid transparent;transition:border-color .15s ease, color .15s ease;
 }
 .back-link:hover{border-bottom-color:var(--lime);color:var(--lime)}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE-FIRST OVERHAUL — applied last in cascade for highest priority
+   Targets: phones from 320px (iPhone SE) up. Scales fluidly on tablet
+   and desktop. Touch targets meet 44x44 WCAG. Forms don't trigger
+   iOS auto-zoom. Hero is above-the-fold on portrait phones.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Root: prevent iOS text-size auto-adjust on rotation ────────────── */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ── Body: prevent any horizontal overflow ──────────────────────────── */
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* ── Images: never overflow their container ─────────────────────────── */
+img, svg, picture, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── FORM INPUTS: 16px minimum prevents iOS auto-zoom on focus ──────── */
+input, select, textarea,
+.form-group input, .form-group select, .form-group textarea {
+  font-size: 16px !important;
+  min-height: 48px;
+  padding: 14px 16px;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+textarea { min-height: 110px; }
+input[type="checkbox"], input[type="radio"] {
+  min-height: 24px; min-width: 24px;
+  width: 24px; height: 24px;
+  margin: 0;
+}
+
+/* ── BUTTONS / CTAS: 48px tap target, full-width on phones ──────────── */
+.btn-primary, .btn-secondary, .btn-ghost,
+a.btn-primary, a.btn-secondary, a.btn-ghost,
+button[type="submit"] {
+  min-height: 48px;
+  padding: 14px 24px;
+  font-size: clamp(0.95rem, 3vw, 1.05rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 560px) {
+  .btn-primary, .btn-secondary, .btn-ghost,
+  a.btn-primary, a.btn-secondary, a.btn-ghost,
+  button[type="submit"] {
+    width: auto;
+    min-width: 180px;
+  }
+}
+
+/* ── NAV: bigger tap area for menu items ────────────────────────────── */
+.tnbp-nav-links a,
+.tnbp-nav-cta,
+nav a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+/* ── BUMP UNDERSIZED UI FONTS to readable mobile minimums ───────────── */
+.cofounder-mini, .cofounder-role, .cofounders-label,
+.hero-progress-label, .hero-pills,
+.tnbp-nav-links, .tnbp-nav-cta,
+.cofounders-cta {
+  font-size: clamp(0.78rem, 2.6vw, 0.88rem) !important;
+  letter-spacing: 0.06em;
+}
+
+.cofounder-mark, .breadcrumb, .ticker-track,
+.hero-progress-meta, .hero-mark-row,
+.tnbp-mark, .form-help, .form-privacy,
+.field-label, .step-num {
+  font-size: clamp(0.85rem, 2.8vw, 0.95rem) !important;
+}
+
+/* Body paragraphs use rem so they scale with user preference */
+p, li, dd { font-size: clamp(0.98rem, 3vw, 1.05rem); line-height: 1.6; }
+
+/* ── HEADINGS: fluid scaling ────────────────────────────────────────── */
+h1 { font-size: clamp(2rem, 7vw, 3.4rem); line-height: 1.05; }
+h2 { font-size: clamp(1.5rem, 5vw, 2.4rem); line-height: 1.15; }
+h3 { font-size: clamp(1.2rem, 4vw, 1.55rem); line-height: 1.25; }
+h4 { font-size: clamp(1.05rem, 3.5vw, 1.25rem); line-height: 1.3; }
+
+/* ── HERO: tighten on phones, get CTA above the fold ────────────────── */
+@media (max-width: 560px) {
+  .hero { padding: 28px 0 44px !important; }
+  .hero-mark-row { padding: 6px 12px; margin-bottom: 14px; }
+  .hero h1 { margin-bottom: 16px; }
+  .hero-sub { margin-bottom: 22px; line-height: 1.5; }
+  .hero-ctas { flex-direction: column !important; gap: 10px; align-items: stretch; }
+  .hero-pills { flex-wrap: wrap; gap: 6px; }
+}
+
+/* ── SECTIONS: less vertical space on small screens ─────────────────── */
+@media (max-width: 560px) {
+  section { padding: 44px 0 !important; }
+  section + section { padding-top: 32px !important; }
+  .ticker-bar { padding: 8px 0 !important; }
+}
+
+/* ── CONTAINER: fit edge-to-edge gutter on mobile ───────────────────── */
+@media (max-width: 560px) {
+  .container,
+  [class*="container"]:not([class*="-grid"]):not([class*="-row"]) {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── CARDS / GRIDS: stack on phones, expand on tablet+ ──────────────── */
+@media (max-width: 759px) {
+  .steps-grid, .cofounders-grid, .gifts-grid,
+  .elig-grid, .founders-detail-grid, .partner-categories,
+  [class*="-grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}
+
+/* ── CARD INTERIOR PADDING: less on mobile ──────────────────────────── */
+@media (max-width: 560px) {
+  .card, .step, .elig-tile, .gift-card, .founder-detail,
+  .stats-card, .partner-cat, .faq-card, .contact-notice {
+    padding: 20px !important;
+  }
+}
+
+/* ── LOGO: scale down on phones ─────────────────────────────────────── */
+@media (max-width: 560px) {
+  .tnbp-mark img,
+  .hero-logo img,
+  .hero-logo picture img {
+    height: 36px !important;
+    width: auto !important;
+  }
+  .hero-logo, .hero-logo picture {
+    max-width: 200px;
+  }
+}
+
+/* ── FORM LAYOUT: stack fields by default, side-by-side on tablet+ ──── */
+@media (max-width: 559px) {
+  .form-row, .form-grid, .form-submit-row {
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+}
+
+/* ── FOOTER: stack on mobile, side-by-side on tablet+ ───────────────── */
+@media (max-width: 719px) {
+  .tnbp-footer-bottom, .tnbp-footer-grid {
+    flex-direction: column !important;
+    gap: 18px !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+}
+
+/* ── TABLES: scrollable horizontally on small screens ───────────────── */
+@media (max-width: 560px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+}
+
+/* ── DETAILS/SUMMARY (FAQ): bigger tap area ─────────────────────────── */
+details summary {
+  min-height: 44px;
+  padding: 14px 16px !important;
+  font-size: clamp(0.98rem, 3vw, 1.08rem) !important;
+  cursor: pointer;
+}
+
+/* ── ANCHOR TAP TARGETS: at least 44px in body content ──────────────── */
+@media (max-width: 560px) {
+  a:not(.btn-primary):not(.btn-secondary):not(.btn-ghost) {
+    padding-top: 4px; padding-bottom: 4px;
+    display: inline-block;
+    line-height: 1.5;
+  }
+}
+
+/* ── IPHONE SE (narrowest common phone, 320-375px) ──────────────────── */
+@media (max-width: 380px) {
+  .container, [class*="container"] {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  h1 { font-size: 1.85rem !important; }
+  h2 { font-size: 1.4rem !important; }
+  .hero h1 { font-size: 1.95rem !important; }
+  .hero { padding: 24px 0 36px !important; }
+  section { padding: 36px 0 !important; }
+  .card, .step, .elig-tile, .gift-card { padding: 16px !important; }
+  .btn-primary, .btn-secondary, .btn-ghost { padding: 12px 18px; font-size: 0.95rem; }
+}
+
+/* ── PREVENT TEXT FROM RUNNING OFF SCREEN ───────────────────────────── */
+* { word-wrap: break-word; overflow-wrap: break-word; }
+pre, code { white-space: pre-wrap; }
+
+/* ── SAFER MARGINS for hero CTAs row & sections ─────────────────────── */
+.hero-ctas { flex-wrap: wrap; }
+
+/* ── FOCUS STATES (a11y): visible keyboard focus ring ───────────────── */
+a:focus-visible, button:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--lime, #A8E633);
+  outline-offset: 2px;
+}
+
+/* ── REDUCED MOTION: respect user preference ────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── STICKY HEADER OFFSET (if present): account for nav height ──────── */
+section[id] { scroll-margin-top: 80px; }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Project","@id":"https://thenewbusinessproject.com/#project","name":"The New Business Project","alternateName":["TNBP","90-Day Jumpstart Graphics Giveaway"],"url":"https://thenewbusinessproject.com/","logo":"https://thenewbusinessproject.com/logo.png","image":"https://thenewbusinessproject.com/og-image.jpg","description":"A 90-day jumpstart program providing new Chicagoland businesses with free vehicle graphics and free property search consultation. Co-founded by Chicago Fleet Wraps and Regions PM.","areaServed":[{"@type":"City","name":"Chicago","containedInPlace":{"@type":"State","name":"Illinois"}},{"@type":"AdministrativeArea","name":"Cook County, IL"},{"@type":"AdministrativeArea","name":"DuPage County, IL"},{"@type":"AdministrativeArea","name":"Lake County, IL"},{"@type":"AdministrativeArea","name":"Kane County, IL"},{"@type":"AdministrativeArea","name":"Will County, IL"},{"@type":"AdministrativeArea","name":"McHenry County, IL"}],"founder":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"},{"@type":"Organization","name":"Regions PM","url":"https://regionspm.com/"}],"sponsor":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"},{"@type":"Organization","name":"Regions PM","url":"https://regionspm.com/"}],"foundingDate":"2024","foundingLocation":{"@type":"Place","name":"Chicago, IL"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://thenewbusinessproject.com/#organization","name":"The New Business Project","alternateName":"TNBP","url":"https://thenewbusinessproject.com/","logo":"https://thenewbusinessproject.com/logo.png","email":"staff@thenewbusinessproject.com"}</script>
