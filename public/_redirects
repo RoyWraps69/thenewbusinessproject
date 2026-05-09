@@ -1,0 +1,17 @@
+# Force HTTPS + canonical domain
+http://thenewbusinessproject.com/*  https://thenewbusinessproject.com/:splat  301!
+http://www.thenewbusinessproject.com/*  https://thenewbusinessproject.com/:splat  301!
+https://www.thenewbusinessproject.com/*  https://thenewbusinessproject.com/:splat  301!
+
+# Future-proof aliases (.org, .foundation domains all canonicalize here)
+https://thenewbusinessproject.org/*  https://thenewbusinessproject.com/:splat  301!
+https://www.thenewbusinessproject.org/*  https://thenewbusinessproject.com/:splat  301!
+https://thenewbusinessproject.foundation/*  https://thenewbusinessproject.com/:splat  301!
+https://www.thenewbusinessproject.foundation/*  https://thenewbusinessproject.com/:splat  301!
+
+# Common variant URLs
+/apply  /#apply  301
+/partners  /#partners  301
+/about  /#about  301
+/faq  /#faq  301
+/founders  /#founders  301
