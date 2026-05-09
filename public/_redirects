@@ -3,15 +3,30 @@ http://thenewbusinessproject.com/*  https://thenewbusinessproject.com/:splat  30
 http://www.thenewbusinessproject.com/*  https://thenewbusinessproject.com/:splat  301!
 https://www.thenewbusinessproject.com/*  https://thenewbusinessproject.com/:splat  301!
 
-# Future-proof aliases (.org, .foundation domains all canonicalize here)
+# Alias domains all canonicalize to .com
 https://thenewbusinessproject.org/*  https://thenewbusinessproject.com/:splat  301!
 https://www.thenewbusinessproject.org/*  https://thenewbusinessproject.com/:splat  301!
 https://thenewbusinessproject.foundation/*  https://thenewbusinessproject.com/:splat  301!
 https://www.thenewbusinessproject.foundation/*  https://thenewbusinessproject.com/:splat  301!
 
-# Common variant URLs
-/apply  /#apply  301
-/partners  /#partners  301
-/about  /#about  301
-/faq  /#faq  301
-/founders  /#founders  301
+# Old anchor URLs from single-page version → real pages
+/#apply              /apply/              301
+/#how                /how-it-works/       301
+/#founders           /founders/           301
+/#partners           /partners/           301
+/#faq                /faq/                301
+/#about              /about/              301
+/#eligibility        /apply/              301
+/#what               /how-it-works/       301
+
+# Common URL variants
+/applications        /apply/              301
+/application         /apply/              301
+/apply-now           /apply/              301
+/how                 /how-it-works/       301
+/process             /how-it-works/       301
+/team                /founders/           301
+/partner             /partners/           301
+/become-a-partner    /partners/           301
+/questions           /faq/                301
+/help                /faq/                301
