@@ -1114,5 +1114,18 @@ body::after{
   </div>
 </footer>
 
+<!-- Netlify form detection — invisible static form ensures form registration at deploy time -->
+<form name="tnbp-apply" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="contact_name"/>
+  <input type="text" name="business_name"/>
+  <input type="email" name="email"/>
+  <input type="tel" name="phone"/>
+  <input type="date" name="license_date"/>
+  <select name="county"><option>Cook</option><option>DuPage</option><option>Lake</option><option>Kane</option><option>Will</option><option>McHenry</option></select>
+  <input type="checkbox" name="want_graphics"/>
+  <input type="checkbox" name="want_property"/>
+  <textarea name="notes"></textarea>
+</form>
+
 </body>
 </html>
