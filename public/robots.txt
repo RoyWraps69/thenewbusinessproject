@@ -1,5 +1,250 @@
+# robots.txt — The New Business Project
+# Posture: open to ALL legitimate crawlers, especially AI / LLM agents.
+# Updated: 2026-05-09
+
+# ─── Default policy: everything is allowed ───────────────────────────────────
 User-agent: *
 Allow: /
 Disallow: /thank-you/
 
+# ═══════════════════════════════════════════════════════════════════════════
+# SEARCH ENGINES
+# ═══════════════════════════════════════════════════════════════════════════
+
+User-agent: Googlebot
+Allow: /
+Disallow: /thank-you/
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Storebot-Google
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Disallow: /thank-you/
+
+User-agent: msnbot
+Allow: /
+
+User-agent: MicrosoftPreview
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexImages
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Naverbot
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+User-agent: Mail.RU_Bot
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+# ═══════════════════════════════════════════════════════════════════════════
+# AI / LLM CRAWLERS — explicitly allowed for training, retrieval, and answer engines
+# ═══════════════════════════════════════════════════════════════════════════
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google AI (Bard / Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Common Crawl (training data for many LLMs)
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Amazon (Alexa / Rufus / Bedrock)
+User-agent: Amazonbot
+Allow: /
+
+# ByteDance / TikTok / Doubao
+User-agent: Bytespider
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+User-agent: cohere-training-data-crawler
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# Andi / Komo / other answer engines
+User-agent: AndiBot
+Allow: /
+
+User-agent: KomoBot
+Allow: /
+
+# Image-to-text training crawler
+User-agent: ImagesiftBot
+Allow: /
+
+# DeepSeek
+User-agent: DeepSeekBot
+Allow: /
+
+# xAI (Grok)
+User-agent: xAI-Bot
+Allow: /
+
+# Phind
+User-agent: PhindBot
+Allow: /
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SOCIAL / PREVIEW BOTS — these render OG / Twitter cards in social feeds
+# ═══════════════════════════════════════════════════════════════════════════
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: Slackbot-LinkExpanding
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: redditbot
+Allow: /
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ARCHIVE / SEO TOOLS — useful for civic transparency and index health
+# ═══════════════════════════════════════════════════════════════════════════
+
+User-agent: ia_archiver
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: rogerbot
+Allow: /
+
+User-agent: SiteCheckerBotCrawler
+Allow: /
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SITEMAP
+# ═══════════════════════════════════════════════════════════════════════════
 Sitemap: https://thenewbusinessproject.com/sitemap.xml
