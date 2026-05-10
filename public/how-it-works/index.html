@@ -1143,6 +1143,46 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 
 /* ── STICKY HEADER OFFSET (if present): account for nav height ──────── */
 section[id] { scroll-margin-top: 80px; }
+
+/* ─── INSTALL PHOTO ──────────────────────────────────────────── */
+.install-photo-sec { padding: 60px 0; }
+.install-photo {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.5), 0 0 0 1px var(--rule);
+  position: relative;
+}
+.install-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.install-photo figcaption {
+  padding: 22px 28px;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid var(--rule);
+}
+.install-caption-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+.install-caption-text {
+  font-family: 'Fraunces', serif;
+  font-size: 1.12rem;
+  font-style: italic;
+  color: var(--ink-2);
+  line-height: 1.4;
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Project","@id":"https://thenewbusinessproject.com/#project","name":"The New Business Project","alternateName":["TNBP","90-Day Jumpstart Graphics Giveaway"],"url":"https://thenewbusinessproject.com/","logo":"https://thenewbusinessproject.com/logo.png","image":"https://thenewbusinessproject.com/og-image.jpg","description":"A 90-day jumpstart program providing new Chicagoland businesses with free vehicle graphics. Founded by Chicago Fleet Wraps.","areaServed":[{"@type":"City","name":"Chicago","containedInPlace":{"@type":"State","name":"Illinois"}},{"@type":"AdministrativeArea","name":"Cook County, IL"},{"@type":"AdministrativeArea","name":"DuPage County, IL"},{"@type":"AdministrativeArea","name":"Lake County, IL"},{"@type":"AdministrativeArea","name":"Kane County, IL"},{"@type":"AdministrativeArea","name":"Will County, IL"},{"@type":"AdministrativeArea","name":"McHenry County, IL"}],"founder":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"}],"funder":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"}],"foundingDate":"2024","foundingLocation":{"@type":"Place","name":"Chicago, IL"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to apply for The New Business Project","description":"Apply for free vehicle graphics consultation in three steps.","totalTime":"P14D","estimatedCost":{"@type":"MonetaryAmount","currency":"USD","value":"0"},"step":[{"@type":"HowToStep","position":1,"name":"Apply","text":"Fill out the 5-field form: name, business name, license date, county, services."},{"@type":"HowToStep","position":2,"name":"Verify","text":"A real person reviews within two business hours."},{"@type":"HowToStep","position":3,"name":"Get started","text":"Graphics: 30-90 min install at the CFW Chicago bay. Property: 1-hour consultation."}]}</script>
@@ -1188,6 +1228,19 @@ section[id] { scroll-margin-top: 80px; }
 </div>
 </div>
 </section>
+
+<section class="sec install-photo-sec">
+<div class="wrap-narrow">
+<figure class="install-photo">
+<img src="/images/install-workshop.webp" alt="Hunt Brothers pizza box truck mid-installation at the Chicago Fleet Wraps shop with ladders and tools visible" loading="lazy" width="1200" height="900"/>
+<figcaption>
+<span class="install-caption-tag">— Inside the CFW shop</span>
+<span class="install-caption-text">Most installs run a single day on the shop floor. The vehicle goes in unmarked. It comes out branded. Step three is when it happens.</span>
+</figcaption>
+</figure>
+</div>
+</section>
+
 
 <section class="sec bordered">
 <div class="wrap">

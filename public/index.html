@@ -1545,6 +1545,114 @@ section[id] { scroll-margin-top: 80px; }
   margin: 0;
 }
 .viz-first-label strong { color: var(--ink, #fff); font-weight: 600; }
+
+/* ─── HERO PHOTO ─────────────────────────────────────────────── */
+.hero-photo-wrap {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+  isolation: isolate;
+}
+.hero-photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(6,6,15,0.85) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+.hero-photo-credit {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 14px;
+  pointer-events: none;
+}
+.hero-photo-credit-tag {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 0.96rem;
+  color: var(--lime);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+.hero-photo-credit-source {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+@media (max-width: 760px) {
+  .hero-photo-wrap { margin-top: 28px; }
+  .hero-photo-credit { bottom: 12px; left: 12px; right: 12px; flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+
+/* ─── PHOTO STRIP ────────────────────────────────────────────── */
+.photo-strip-sec h2 .lime { color: var(--lime); }
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+@media (max-width: 900px) {
+  .photo-strip { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .photo-strip { grid-template-columns: 1fr; }
+}
+.photo-strip-card {
+  margin: 0;
+  background: var(--bg-card);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+.photo-strip-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168,230,51,0.4);
+}
+.photo-strip-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.photo-strip-card figcaption {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.photo-strip-card figcaption strong {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.photo-strip-card figcaption span {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
 </style>
 <!-- /TNBP Viz Styles -->
 </head>
@@ -1564,7 +1672,17 @@ section[id] { scroll-margin-top: 80px; }
 <div class="hero-ctas"><a class="btn-primary" href="/apply/">Apply for the program →</a><a class="btn-ghost" href="/how-it-works/">How it works</a></div>
 <div class="hero-progress"><div class="hero-progress-label"> - 2026 Goal</div><div class="hero-progress-headline">Help 50 new Chicagoland businesses get off the ground.</div><div class="hero-progress-bar"><div class="hero-progress-fill"></div></div><div class="hero-progress-meta"><strong>4</strong> applications received · <strong>46</strong> spots remaining</div></div>
 </div>
-<div class="hero-logo-wrap"><picture><source srcset="/logo.webp" type="image/webp"/><img src="/logo.png" alt="The New Business Project - 90-Day Jumpstart Graphics Giveaway logo" class="hero-logo" width="520" height="520"/></picture></div>
+<div class="hero-photo-wrap">
+<picture>
+<source media="(min-width:760px)" srcset="/images/wrap-windy-city.webp" type="image/webp"/>
+<source srcset="/images/wrap-windy-city.webp" type="image/webp"/>
+<img src="/images/wrap-windy-city.webp" alt="Windy City Movers branded box truck on a Chicago street - one of 19,400 vehicles wrapped by Chicago Fleet Wraps" width="1456" height="819" class="hero-photo" loading="eager" fetchpriority="high"/>
+</picture>
+<div class="hero-photo-credit">
+<span class="hero-photo-credit-tag">Real wrap. Real Chicago business.</span>
+<span class="hero-photo-credit-source">CFW · 19,400+ wraps since 2001</span>
+</div>
+</div>
 </div></div></section>
 
 <section class="cofounders-band" aria-label="Founding partner">
@@ -1690,6 +1808,34 @@ section[id] { scroll-margin-top: 80px; }
 </section>
 </div>
 </section>
+
+<section class="sec photo-strip-sec">
+<div class="wrap-narrow">
+<p class="sec-label">— Real businesses we've helped launch</p>
+<h2>Not <em>stock photos.</em> <span class="lime">Actual fleets.</span></h2>
+<p class="lede">Every vehicle on this page is a real Chicagoland-area business that walked into the Chicago Fleet Wraps shop with a blank van and walked out with a brand. Same shop. Same hands. Same offer we're extending to 50 new businesses this year.</p>
+
+<div class="photo-strip">
+<figure class="photo-strip-card">
+<img src="/images/hero-arnold-electric.webp" alt="Arnold Electric purple and lime van wrapped by Chicago Fleet Wraps" loading="lazy" width="800" height="600"/>
+<figcaption><strong>Arnold Electric</strong><span>Residential electrical · IL</span></figcaption>
+</figure>
+<figure class="photo-strip-card">
+<img src="/images/wrap-haul-it-movers.webp" alt="Haul-It Movers blue box truck with full vinyl wrap" loading="lazy" width="800" height="600"/>
+<figcaption><strong>Haul-It Movers</strong><span>Moving and delivery · IL</span></figcaption>
+</figure>
+<figure class="photo-strip-card">
+<img src="/images/wrap-haney-plumbing.webp" alt="A-1 Haney Plumbing orange and blue van wrap with custom mascot illustration" loading="lazy" width="800" height="600"/>
+<figcaption><strong>A-1 Haney Plumbing</strong><span>Plumbing · 24-hr service</span></figcaption>
+</figure>
+<figure class="photo-strip-card">
+<img src="/images/wrap-fleet-trio.webp" alt="Three matched Ambient Edge HVAC vans showing fleet consistency" loading="lazy" width="800" height="600"/>
+<figcaption><strong>Ambient Edge</strong><span>HVAC fleet · 3 vehicles</span></figcaption>
+</figure>
+</div>
+</div>
+</section>
+
 
 
 <section class="sec bordered" id="what">
