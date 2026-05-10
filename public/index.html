@@ -1193,6 +1193,360 @@ section[id] { scroll-margin-top: 80px; }
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenewbusinessproject.com/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://thenewbusinessproject.com/#website","url":"https://thenewbusinessproject.com/","name":"The New Business Project","alternateName":["TNBP","90-Day Jumpstart Graphics Giveaway"],"description":"Free vehicle graphics for new Chicagoland businesses","inLanguage":"en-US","publisher":{"@id":"https://thenewbusinessproject.com/#organization"}}</script>
+<!-- TNBP Viz Styles -->
+<style>
+/* ─── DATA VISUALIZATION CARDS ──────────────────────────────────── */
+.viz-card {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-card, #11112B) 0%, var(--bg-card-2, #1A1A38) 100%);
+  border: 1px solid var(--rule, rgba(255,255,255,.10));
+  border-radius: 18px;
+  padding: 48px 40px;
+  margin: 32px 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+.viz-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: 
+    radial-gradient(ellipse 600px 300px at 0% 0%, var(--purple-glow, rgba(123,63,228,.15)) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 280px at 100% 100%, var(--lime-glow, rgba(168,230,51,.10)) 0%, transparent 60%);
+  z-index: -1; opacity: .5;
+  pointer-events: none;
+}
+.viz-card .viz-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: .76rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--lime, #A8E633);
+  margin: 0 0 8px;
+}
+.viz-card .viz-title {
+  font-family: 'Fraunces', 'Inter', serif;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-weight: 700; line-height: 1.08;
+  color: var(--ink, #fff);
+  margin: 0 0 8px;
+  letter-spacing: -.015em;
+}
+.viz-card .viz-title em {
+  font-style: italic;
+  color: var(--lime, #A8E633);
+  font-family: 'Fraunces', serif;
+}
+.viz-card .viz-sub {
+  font-size: 1rem;
+  color: var(--ink-3, rgba(255,255,255,.62));
+  margin: 0 0 32px;
+  max-width: 580px;
+}
+.viz-card .viz-footer {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule, rgba(255,255,255,.10));
+  font-size: .88rem;
+  color: var(--ink-3, rgba(255,255,255,.62));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.viz-card .viz-footer strong {
+  color: var(--lime, #A8E633);
+  font-weight: 700;
+}
+@media (max-width: 640px) {
+  .viz-card { padding: 32px 22px; border-radius: 14px; }
+}
+
+/* ─── VIZ 1: CIVIC IMPACT (4-stat horizontal layout) ───────────── */
+.viz-civic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+@media (max-width: 900px) {
+  .viz-civic-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
+}
+@media (max-width: 480px) {
+  .viz-civic-grid { grid-template-columns: 1fr; }
+}
+.viz-civic-stat {
+  position: relative;
+  padding-left: 0;
+}
+.viz-civic-stat .num {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.025em;
+  margin: 0 0 8px;
+  background: linear-gradient(135deg, var(--lime, #A8E633) 0%, var(--lime-d, #88C420) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.viz-civic-stat:nth-child(2) .num {
+  background: linear-gradient(135deg, var(--blue-l, #3B7BF5) 0%, var(--blue, #1E5FE6) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.viz-civic-stat:nth-child(3) .num {
+  background: linear-gradient(135deg, var(--purple-l, #9460F0) 0%, var(--purple, #7B3FE4) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.viz-civic-stat:nth-child(4) .num {
+  background: linear-gradient(135deg, var(--orange, #FF8C28) 0%, #FF6B00 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.viz-civic-stat .label {
+  font-size: .92rem;
+  color: var(--ink-2, rgba(255,255,255,.82));
+  line-height: 1.45;
+  margin: 0;
+}
+.viz-civic-stat .label strong {
+  color: var(--ink, #fff);
+  font-weight: 600;
+}
+
+/* ─── VIZ 2: INVESTMENT vs RETURN (two-column) ────────────────── */
+.viz-invest-grid {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+@media (max-width: 760px) {
+  .viz-invest-grid { grid-template-columns: 1fr; gap: 16px; }
+  .viz-invest-vs { display: none !important; }
+}
+.viz-invest-col {
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid var(--rule-2, rgba(255,255,255,.20));
+}
+.viz-invest-col.cost {
+  background: rgba(30,95,230,.08);
+  border-color: rgba(30,95,230,.30);
+}
+.viz-invest-col.return {
+  background: rgba(168,230,51,.08);
+  border-color: rgba(168,230,51,.30);
+}
+.viz-invest-col h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 22px;
+  color: var(--ink, #fff);
+}
+.viz-invest-col.cost h4 { color: var(--blue-l, #3B7BF5); }
+.viz-invest-col.return h4 { color: var(--lime, #A8E633); }
+.viz-invest-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--ink-3, rgba(255,255,255,.62));
+}
+.viz-invest-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.viz-invest-row:last-child { border-bottom: none; }
+.viz-invest-num {
+  font-family: 'Fraunces', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink, #fff);
+  min-width: 56px;
+}
+.viz-invest-col.cost .viz-invest-num { color: var(--blue-l, #3B7BF5); }
+.viz-invest-col.return .viz-invest-num { color: var(--lime, #A8E633); font-size: 1.2rem; }
+.viz-invest-text {
+  font-size: .93rem;
+  color: var(--ink-2, rgba(255,255,255,.82));
+  line-height: 1.4;
+}
+.viz-invest-text strong { color: var(--ink, #fff); font-weight: 600; }
+
+/* ─── VIZ 3: FIVE-YEAR LTV BARS ────────────────────────────────── */
+.viz-ltv-chart {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  align-items: end;
+  height: 320px;
+  padding: 0 0 8px;
+  border-bottom: 1px solid var(--rule, rgba(255,255,255,.10));
+}
+@media (max-width: 640px) {
+  .viz-ltv-chart { height: 240px; gap: 8px; }
+}
+.viz-ltv-bar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.viz-ltv-bar-label-top {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(.85rem, 1.6vw, 1.05rem);
+  font-weight: 700;
+  color: var(--lime, #A8E633);
+  text-align: center;
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+.viz-ltv-bar-fill {
+  width: 100%;
+  background: linear-gradient(180deg, var(--lime, #A8E633) 0%, var(--lime-d, #88C420) 100%);
+  border-radius: 6px 6px 0 0;
+  position: relative;
+  transition: filter .2s ease;
+  box-shadow: 0 -4px 24px rgba(168,230,51,.20);
+}
+.viz-ltv-bar:nth-child(1) .viz-ltv-bar-fill { background: linear-gradient(180deg, #6c98ff 0%, var(--blue, #1E5FE6) 100%); box-shadow: 0 -4px 24px rgba(30,95,230,.25); }
+.viz-ltv-bar:nth-child(1) .viz-ltv-bar-label-top { color: var(--blue-l, #3B7BF5); }
+.viz-ltv-bar:nth-child(2) .viz-ltv-bar-fill { background: linear-gradient(180deg, var(--purple-l, #9460F0) 0%, var(--purple, #7B3FE4) 100%); box-shadow: 0 -4px 24px rgba(123,63,228,.25); }
+.viz-ltv-bar:nth-child(2) .viz-ltv-bar-label-top { color: var(--purple-l, #9460F0); }
+.viz-ltv-bar:nth-child(4) .viz-ltv-bar-fill { background: linear-gradient(180deg, #FFA552 0%, var(--orange, #FF8C28) 100%); box-shadow: 0 -4px 24px rgba(255,140,40,.30); }
+.viz-ltv-bar:nth-child(4) .viz-ltv-bar-label-top { color: var(--orange, #FF8C28); }
+.viz-ltv-axis {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+@media (max-width: 640px) {
+  .viz-ltv-axis { gap: 8px; }
+}
+.viz-ltv-axis-cell {
+  text-align: center;
+}
+.viz-ltv-axis-cell .icon {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  display: block;
+}
+.viz-ltv-axis-cell .name {
+  font-family: 'Inter', sans-serif;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-2, rgba(255,255,255,.82));
+  line-height: 1.2;
+}
+
+/* ─── VIZ 4: COMPOUNDING (table + visual side-by-side) ─────────── */
+.viz-compound-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+@media (max-width: 760px) {
+  .viz-compound-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+.viz-compound-svg {
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+}
+.viz-compound-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.viz-compound-table th,
+.viz-compound-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--rule, rgba(255,255,255,.10));
+}
+.viz-compound-table th {
+  font-family: 'Inter', sans-serif;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--lime, #A8E633);
+  background: rgba(168,230,51,.05);
+}
+.viz-compound-table td.year {
+  font-size: .92rem;
+  color: var(--ink-2, rgba(255,255,255,.82));
+  font-weight: 500;
+}
+.viz-compound-table td.count {
+  font-family: 'Fraunces', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--lime, #A8E633);
+  text-align: right;
+}
+
+/* ─── VIZ 5: FIRST TOUCH (2x2 grid of stats) ──────────────────── */
+.viz-first-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (max-width: 560px) {
+  .viz-first-grid { grid-template-columns: 1fr; }
+}
+.viz-first-stat {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--rule, rgba(255,255,255,.10));
+  border-radius: 14px;
+  padding: 28px 26px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.viz-first-icon {
+  width: 56px; height: 56px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(168,230,51,.10);
+  border: 1px solid rgba(168,230,51,.25);
+}
+.viz-first-stat:nth-child(2) .viz-first-icon { background: rgba(30,95,230,.10); border-color: rgba(30,95,230,.25); }
+.viz-first-stat:nth-child(3) .viz-first-icon { background: rgba(123,63,228,.10); border-color: rgba(123,63,228,.25); }
+.viz-first-stat:nth-child(4) .viz-first-icon { background: rgba(255,140,40,.10); border-color: rgba(255,140,40,.25); }
+.viz-first-num {
+  font-family: 'Fraunces', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--lime, #A8E633);
+  margin: 0 0 8px;
+  letter-spacing: -.02em;
+}
+.viz-first-stat:nth-child(2) .viz-first-num { color: var(--blue-l, #3B7BF5); }
+.viz-first-stat:nth-child(3) .viz-first-num { color: var(--purple-l, #9460F0); }
+.viz-first-stat:nth-child(4) .viz-first-num { color: var(--orange, #FF8C28); }
+.viz-first-label {
+  font-size: .96rem;
+  color: var(--ink-2, rgba(255,255,255,.82));
+  line-height: 1.45;
+  margin: 0;
+}
+.viz-first-label strong { color: var(--ink, #fff); font-weight: 600; }
+</style>
+<!-- /TNBP Viz Styles -->
 </head>
 <body>
 
@@ -1236,7 +1590,7 @@ section[id] { scroll-margin-top: 80px; }
 <p class="sec-label">Why this exists</p>
 <h2>You spent your first 90 days <em>on the boring stuff.</em></h2>
 <p class="lede">Filing the LLC with the Illinois Secretary of State. Opening a business checking account. Getting your EIN from the IRS. Calling your insurance broker. Picking a name your aunt won't hate. Driving an unmarked Ford Transit around Chicago that nobody knows belongs to a real business yet.</p>
-<p class="lede" style="margin-top:14px"><strong>Marketing comes last.</strong> Always does. By the time you can afford branding, you've already lost a few customers who didn't know you existed. We're trying to fix that. A vehicle graphics company and a property management firm pay for your first piece of professional infrastructure - so you don't have to wait six months to look like a real business.</p>
+<p class="lede" style="margin-top:14px"><strong>Marketing comes last.</strong> Always does. By the time you can afford branding, you've already lost a few customers who didn't know you existed. We're trying to fix that. Chicago Fleet Wraps pays for your first piece of professional infrastructure - the wrapped vehicle that tells customers you exist - so you don't have to wait six months to look like a real business.</p>
 <p class="lede" style="margin-top:14px">If your business is anywhere in the six-county Chicagoland metro - <strong>Cook, DuPage, Lake, Kane, Will, or McHenry County</strong> - you qualify. The 90-day clock is the only filter.</p>
 </div>
 </section>
@@ -1266,11 +1620,82 @@ section[id] { scroll-margin-top: 80px; }
 </div>
 </div>
 </section>
+<section class="sec">
+<div class="wrap-narrow">
+<section class="viz-card viz-first-touch">
+  <p class="viz-eyebrow">— Why being seen first matters</p>
+  <h3 class="viz-title">The first touch <em>wins everything.</em></h3>
+  <p class="viz-sub">A wrapped vehicle does in week one what most new businesses spend years trying to accomplish: it makes you visible, recognizable, and real. Trust starts with being seen.</p>
+
+  <div class="viz-first-grid">
+    <div class="viz-first-stat">
+      <div class="viz-first-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#A8E633" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+      </div>
+      <div>
+        <p class="viz-first-num">68%</p>
+        <p class="viz-first-label"><strong>of clients stay with the first professional they hire.</strong> First impressions don't fade — they harden.</p>
+      </div>
+    </div>
+
+    <div class="viz-first-stat">
+      <div class="viz-first-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#3B7BF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        </svg>
+      </div>
+      <div>
+        <p class="viz-first-num">3×</p>
+        <p class="viz-first-label">businesses with a <strong>strong brand identity</strong> are three times more likely to survive year one.</p>
+      </div>
+    </div>
+
+    <div class="viz-first-stat">
+      <div class="viz-first-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#9460F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13"/>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+      </div>
+      <div>
+        <p class="viz-first-num">30K–70K</p>
+        <p class="viz-first-label">daily impressions from a single <strong>wrapped vehicle</strong> driving Chicago streets.</p>
+      </div>
+    </div>
+
+    <div class="viz-first-stat">
+      <div class="viz-first-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#FF8C28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="8.5" cy="7" r="4"/>
+          <line x1="20" y1="8" x2="20" y2="14"/>
+          <line x1="23" y1="11" x2="17" y2="11"/>
+        </svg>
+      </div>
+      <div>
+        <p class="viz-first-num">5×</p>
+        <p class="viz-first-label">it costs <strong>five times more</strong> to acquire a new customer than to retain one. Get the first one right.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="viz-footer">
+    <strong>Be seen. Be trusted. Be chosen.</strong>
+    <span>The wrap pays for itself in the first month — if it's the right one.</span>
+  </div>
+</section>
+</div>
+</section>
+
 
 <section class="sec bordered" id="what">
 <div class="wrap">
 <p class="sec-label">What you get</p>
-<h2>Two services. <em>Two founding partners.</em> <span class="blue">Zero cost.</span></h2>
+<h2>One service. <em>Free for new businesses.</em> <span class="blue">Zero strings.</span></h2>
 <p class="lede">More services as more partners join. Today, the program covers two things: getting your truck branded and finding you a real workspace. Both are paid for, designed, and delivered by Chicagoland businesses with skin in the game.</p>
 <div class="gifts-grid">
 <div class="gift cfw"><div class="gift-header"><div class="gift-mark">CFW</div><div class="gift-tag">From <strong>Chicago Fleet Wraps</strong></div></div>
@@ -1321,7 +1746,7 @@ section[id] { scroll-margin-top: 80px; }
 <div class="founders-detail-grid">
 <div class="founder-detail cfw">
 <span class="role-badge">FOUNDER · CFW</span>
-<h2>Chicago Fleet Wraps</h2>
+<h3 class="founder-detail-name">Chicago Fleet Wraps</h3>
 <p class="est">Est. 2001 · 19,400+ vehicles wrapped · Chicago, IL</p>
 <p>A vehicle wrap shop that's been installing graphics on Chicago vehicles since 2001. Over 19,400 wraps to date - from single-vehicle small-business jobs to 600-vehicle Rivian rollouts for Amazon DSP and Blue Origin. Climate-controlled installation bay.</p>
 <a class="visit" href="/founders/">Read full bio →</a>
@@ -1414,6 +1839,7 @@ section[id] { scroll-margin-top: 80px; }
 <input type="email" name="email"/>
 <input type="url" name="website"/>
 <select name="category"><option value=""></option><option value="attorney"></option></select>
+<input type="text" name="tier"/>
 <textarea name="offer"></textarea>
 <input type="text" name="years_in_business"/>
 <textarea name="notes"></textarea>
