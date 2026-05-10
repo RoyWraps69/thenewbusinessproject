@@ -1143,8 +1143,93 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 
 /* ── STICKY HEADER OFFSET (if present): account for nav height ──────── */
 section[id] { scroll-margin-top: 80px; }
+
+/* ─── PARTNER FORM (partners page) ─────────────────────────────────── */
+.partner-form-block { padding-bottom: 32px; }
+.partner-form { display: flex; flex-direction: column; gap: 18px; max-width: 720px; }
+.partner-form .form-group { display: flex; flex-direction: column; gap: 6px; }
+.partner-form label {
+  font-size: 0.92rem; font-weight: 600; color: var(--ink-1, #fff);
+  letter-spacing: 0.01em; display: inline-flex; align-items: center; gap: 6px;
+}
+.partner-form .req { color: var(--lime, #A8E633); font-weight: 700; }
+.partner-form .form-help, .partner-form .form-help-inline {
+  font-size: 0.84rem; color: var(--ink-3, rgba(255,255,255,0.55));
+  font-weight: 400; margin-top: 4px;
+}
+.partner-form .form-help-inline { margin-top: 0; margin-left: 4px; }
+.partner-form input,
+.partner-form select,
+.partner-form textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 16px;
+  color: var(--ink-1, #fff);
+  font-family: inherit;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.partner-form input:focus,
+.partner-form select:focus,
+.partner-form textarea:focus {
+  outline: none;
+  border-color: var(--lime, #A8E633);
+  background: rgba(168,230,51,0.04);
+}
+.partner-form textarea { resize: vertical; min-height: 90px; line-height: 1.55; }
+.partner-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 559px) { .partner-form .form-row { grid-template-columns: 1fr; } }
+.partner-form .actions {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  align-items: center; margin-top: 16px;
+}
+.partner-form button.btn-primary {
+  background: var(--lime, #A8E633);
+  color: var(--bg-1, #06060F);
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  font-family: inherit;
+}
+.partner-form button.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 28px rgba(168,230,51,0.22);
+}
+
+/* ─── HOMEPAGE PARTNER CALLOUT ─────────────────────────────────────── */
+.partner-callout {
+  background: linear-gradient(180deg, rgba(123,63,228,0.05) 0%, rgba(168,230,51,0.04) 100%);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.partner-callout-cats {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin: 28px 0 32px;
+}
+.partner-callout-cats span {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: var(--ink-2, rgba(255,255,255,0.85));
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+.partner-callout-cta {
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+}
+@media (max-width: 559px) {
+  .partner-callout-cta { flex-direction: column; align-items: stretch; }
+  .partner-callout-cta a { text-align: center; }
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Project","@id":"https://thenewbusinessproject.com/#project","name":"The New Business Project","alternateName":["TNBP","90-Day Jumpstart Graphics Giveaway"],"url":"https://thenewbusinessproject.com/","logo":"https://thenewbusinessproject.com/logo.png","image":"https://thenewbusinessproject.com/og-image.jpg","description":"A 90-day jumpstart program providing new Chicagoland businesses with free vehicle graphics. Founded by Chicago Fleet Wraps.","areaServed":[{"@type":"City","name":"Chicago","containedInPlace":{"@type":"State","name":"Illinois"}},{"@type":"AdministrativeArea","name":"Cook County, IL"},{"@type":"AdministrativeArea","name":"DuPage County, IL"},{"@type":"AdministrativeArea","name":"Lake County, IL"},{"@type":"AdministrativeArea","name":"Kane County, IL"},{"@type":"AdministrativeArea","name":"Will County, IL"},{"@type":"AdministrativeArea","name":"McHenry County, IL"}],"founder":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"}],"sponsor":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"}],"foundingDate":"2024","foundingLocation":{"@type":"Place","name":"Chicago, IL"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Project","@id":"https://thenewbusinessproject.com/#project","name":"The New Business Project","alternateName":["TNBP","90-Day Jumpstart Graphics Giveaway"],"url":"https://thenewbusinessproject.com/","logo":"https://thenewbusinessproject.com/logo.png","image":"https://thenewbusinessproject.com/og-image.jpg","description":"A 90-day jumpstart program providing new Chicagoland businesses with free vehicle graphics. Founded by Chicago Fleet Wraps.","areaServed":[{"@type":"City","name":"Chicago","containedInPlace":{"@type":"State","name":"Illinois"}},{"@type":"AdministrativeArea","name":"Cook County, IL"},{"@type":"AdministrativeArea","name":"DuPage County, IL"},{"@type":"AdministrativeArea","name":"Lake County, IL"},{"@type":"AdministrativeArea","name":"Kane County, IL"},{"@type":"AdministrativeArea","name":"Will County, IL"},{"@type":"AdministrativeArea","name":"McHenry County, IL"}],"founder":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"}],"funder":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"}],"foundingDate":"2024","foundingLocation":{"@type":"Place","name":"Chicago, IL"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenewbusinessproject.com/"},{"@type":"ListItem","position":2,"name":"Partners","item":"https://thenewbusinessproject.com/partners/"}]}</script>
 </head>
 <body>
@@ -1158,7 +1243,7 @@ section[id] { scroll-margin-top: 80px; }
 <p>Are you a Chicagoland service business that helps new companies get off the ground? <strong>We're actively onboarding partners across nine categories.</strong> As a partner, you offer one specific service to program recipients at no charge or significantly reduced cost. In return: prominent credit, direct relationships with new Chicagoland businesses, and an early seat at a growing program.</p>
 </div></section>
 
-<section class="cofounders-band" aria-label="Founding partner"><div class="wrap"><div class="cofounders-grid"><p class="cofounders-label">Founded<br>by</p><div class="cofounders-row"><div class="cofounder"><div class="cofounder-mark cfw">CFW</div><div class="cofounder-text"><span class="cofounder-name"><a href="https://chicagofleetwraps.com" target="_blank" rel="noopener">Chicago Fleet Wraps</a></span><span class="cofounder-role">Vehicle graphics · Est. 2001 · 19,400+ vehicles wrapped</span></div></div></div><a href="/partners/" class="cofounders-cta">Become a partner →</a></div></div></section>
+<section class="cofounders-band" aria-label="Founding partner"><div class="wrap"><div class="cofounders-grid"><p class="cofounders-label">Founded<br>by</p><div class="cofounders-row"><div class="cofounder"><div class="cofounder-mark cfw">CFW</div><div class="cofounder-text"><span class="cofounder-name"><a href="https://chicagofleetwraps.com" target="_blank" rel="noopener">Chicago Fleet Wraps</a></span><span class="cofounder-role">Vehicle graphics · Est. 2001 · 19,400+ vehicles wrapped</span></div></div></div><a href="/partners/#apply" class="cofounders-cta">Become a partner →</a></div></div></section>
 
 <section class="sec bordered">
 <div class="wrap">
@@ -1185,7 +1270,77 @@ section[id] { scroll-margin-top: 80px; }
 <div class="step"><div class="step-num">02</div><h3>Quality review</h3><p>We check your reputation, online reviews, time in business, and references if needed. Partners are vetted because the program's reputation rides on yours.</p></div>
 <div class="step"><div class="step-num">03</div><h3>Onboard</h3><p>If approved, you're added to the partner directory, your service goes into the recipient welcome kit, and we coordinate handoffs as new applications come in.</p></div>
 </div>
-<div class="cta-block" style="margin-top:48px"><h2>Ready to <em>partner?</em></h2><p>Email us with your business name, category, and what you'd offer. We respond within two business hours during business days.</p><div class="actions"><a class="btn-primary" href="mailto:staff@thenewbusinessproject.com?subject=Partner%20Application%20%E2%80%94%20The%20New%20Business%20Project">Email about partnership →</a><a class="btn-ghost" href="/founders/">Meet the founder</a></div></div>
+<div class="cta-block partner-form-block" id="apply" style="margin-top:48px;scroll-margin-top:80px"><h2>Ready to <em>partner?</em></h2><p>Tell us about your business. Five fields. We respond within two business hours during business days.</p>
+
+<form name="tnbp-partner" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" class="partner-form">
+<input type="hidden" name="form-name" value="tnbp-partner"/>
+<p style="display:none"><label>Don't fill this out: <input name="bot-field"/></label></p>
+
+<div class="form-group">
+  <label for="p-contact-name">Your name <span class="req">*</span></label>
+  <input type="text" id="p-contact-name" name="contact_name" required autocomplete="name"/>
+</div>
+
+<div class="form-group">
+  <label for="p-business-name">Business name <span class="req">*</span></label>
+  <input type="text" id="p-business-name" name="business_name" required autocomplete="organization"/>
+</div>
+
+<div class="form-row">
+  <div class="form-group">
+    <label for="p-email">Email <span class="req">*</span></label>
+    <input type="email" id="p-email" name="email" required autocomplete="email"/>
+  </div>
+  <div class="form-group">
+    <label for="p-website">Website (or LinkedIn)</label>
+    <input type="url" id="p-website" name="website" placeholder="https://" autocomplete="url"/>
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="p-category">Partner category <span class="req">*</span></label>
+  <select id="p-category" name="category" required>
+    <option value="">Pick one...</option>
+    <option value="attorney">Attorney (LLC formation, contracts)</option>
+    <option value="accountant">Accountant or bookkeeper</option>
+    <option value="bank">Bank (business checking)</option>
+    <option value="payroll">Payroll provider</option>
+    <option value="web-designer">Web designer or developer</option>
+    <option value="printer">Print shop</option>
+    <option value="marketing">Marketing agency</option>
+    <option value="insurance">Insurance broker</option>
+    <option value="real-estate">Commercial real estate</option>
+    <option value="other">Other (describe in notes below)</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="p-offer">What would you offer recipients? <span class="req">*</span></label>
+  <textarea id="p-offer" name="offer" required rows="4" placeholder="Example: Free 1-hour LLC formation consultation. Reduced rate after that. Or: Free first month of bookkeeping for any qualifying recipient."></textarea>
+  <span class="form-help">Free or significantly reduced. One specific service, not a vague discount.</span>
+</div>
+
+<div class="form-group">
+  <label for="p-years">Years in business</label>
+  <input type="text" id="p-years" name="years_in_business" placeholder="e.g. 8 years" inputmode="numeric"/>
+</div>
+
+<div class="form-group">
+  <label for="p-notes">Anything else? <span class="form-help-inline">(optional)</span></label>
+  <textarea id="p-notes" name="notes" rows="3" placeholder="Service area, certifications, why you want to partner, etc."></textarea>
+</div>
+
+<div class="contact-notice" style="background:rgba(168,230,51,0.08);border:1px solid rgba(168,230,51,0.3);border-radius:8px;padding:14px 18px;margin:20px 0;font-size:0.92rem;line-height:1.55;color:rgba(255,255,255,0.92)">
+<strong style="color:#A8E633">Email-only contact.</strong> All initial conversations are via <a href="mailto:staff@thenewbusinessproject.com" style="color:#A8E633;text-decoration:underline">staff@thenewbusinessproject.com</a> for tracking. After approval, we coordinate handoffs by email.
+</div>
+
+<div class="actions">
+  <button type="submit" class="btn-primary">Submit partner application →</button>
+  <a class="btn-ghost" href="mailto:staff@thenewbusinessproject.com?subject=Partner%20Application%20%E2%80%94%20The%20New%20Business%20Project">Or email us instead</a>
+</div>
+</form>
+
+</div>
 </div>
 </section>
 </main>

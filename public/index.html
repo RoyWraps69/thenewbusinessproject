@@ -1158,9 +1158,36 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 
 /* ── STICKY HEADER OFFSET (if present): account for nav height ──────── */
 section[id] { scroll-margin-top: 80px; }
+
+/* ─── HOMEPAGE PARTNER CALLOUT ─────────────────────────────────────── */
+.partner-callout {
+  background: linear-gradient(180deg, rgba(123,63,228,0.05) 0%, rgba(168,230,51,0.04) 100%);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.partner-callout-cats {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin: 28px 0 32px;
+}
+.partner-callout-cats span {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: var(--ink-2, rgba(255,255,255,0.85));
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+.partner-callout-cta {
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+}
+@media (max-width: 559px) {
+  .partner-callout-cta { flex-direction: column; align-items: stretch; }
+  .partner-callout-cta a { text-align: center; }
+}
 </style>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Project","@id":"https://thenewbusinessproject.com/#project","name":"The New Business Project","alternateName":["TNBP","90-Day Jumpstart Graphics Giveaway"],"url":"https://thenewbusinessproject.com/","logo":"https://thenewbusinessproject.com/logo.png","image":"https://thenewbusinessproject.com/og-image.jpg","description":"A 90-day jumpstart program providing new Chicagoland businesses with free vehicle graphics. Founded by Chicago Fleet Wraps. Serving Cook, DuPage, Lake, Kane, Will, and McHenry Counties in Illinois.","areaServed":[{"@type":"City","name":"Chicago","containedInPlace":{"@type":"State","name":"Illinois"}},{"@type":"AdministrativeArea","name":"Cook County, IL"},{"@type":"AdministrativeArea","name":"DuPage County, IL"},{"@type":"AdministrativeArea","name":"Lake County, IL"},{"@type":"AdministrativeArea","name":"Kane County, IL"},{"@type":"AdministrativeArea","name":"Will County, IL"},{"@type":"AdministrativeArea","name":"McHenry County, IL"}],"founder":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"}],"sponsor":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"}],"foundingDate":"2024","foundingLocation":{"@type":"Place","name":"Chicago, IL"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Project","@id":"https://thenewbusinessproject.com/#project","name":"The New Business Project","alternateName":["TNBP","90-Day Jumpstart Graphics Giveaway"],"url":"https://thenewbusinessproject.com/","logo":"https://thenewbusinessproject.com/logo.png","image":"https://thenewbusinessproject.com/og-image.jpg","description":"A 90-day jumpstart program providing new Chicagoland businesses with free vehicle graphics. Founded by Chicago Fleet Wraps. Serving Cook, DuPage, Lake, Kane, Will, and McHenry Counties in Illinois.","areaServed":[{"@type":"City","name":"Chicago","containedInPlace":{"@type":"State","name":"Illinois"}},{"@type":"AdministrativeArea","name":"Cook County, IL"},{"@type":"AdministrativeArea","name":"DuPage County, IL"},{"@type":"AdministrativeArea","name":"Lake County, IL"},{"@type":"AdministrativeArea","name":"Kane County, IL"},{"@type":"AdministrativeArea","name":"Will County, IL"},{"@type":"AdministrativeArea","name":"McHenry County, IL"}],"founder":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"}],"funder":[{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"}],"foundingDate":"2024","foundingLocation":{"@type":"Place","name":"Chicago, IL"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://thenewbusinessproject.com/#organization","name":"The New Business Project","alternateName":"TNBP","url":"https://thenewbusinessproject.com/","logo":"https://thenewbusinessproject.com/logo.png","email":"staff@thenewbusinessproject.com","areaServed":[{"@type":"AdministrativeArea","name":"Cook County, IL"},{"@type":"AdministrativeArea","name":"DuPage County, IL"},{"@type":"AdministrativeArea","name":"Lake County, IL"},{"@type":"AdministrativeArea","name":"Kane County, IL"},{"@type":"AdministrativeArea","name":"Will County, IL"},{"@type":"AdministrativeArea","name":"McHenry County, IL"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","@id":"https://thenewbusinessproject.com/#service-graphics","name":"Free Vehicle Graphics for New Chicagoland Businesses","serviceType":"Vehicle Graphics Installation","provider":{"@type":"Organization","name":"Chicago Fleet Wraps","url":"https://chicagofleetwraps.com/"},"areaServed":[{"@type":"AdministrativeArea","name":"Cook County, IL"},{"@type":"AdministrativeArea","name":"DuPage County, IL"},{"@type":"AdministrativeArea","name":"Lake County, IL"},{"@type":"AdministrativeArea","name":"Kane County, IL"},{"@type":"AdministrativeArea","name":"Will County, IL"},{"@type":"AdministrativeArea","name":"McHenry County, IL"}],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock"},"description":"Free design and installation of up to 8 square feet of die-cut cast vinyl vehicle graphics. Materials, design, and labor included."}</script>
 
@@ -1200,7 +1227,7 @@ section[id] { scroll-margin-top: 80px; }
  </div>
  <span class="cofounders-amp">&amp;</span>
 </div>
- <a href="/partners/" class="cofounders-cta">Become a partner →</a>
+ <a href="/partners/#apply" class="cofounders-cta">Become a partner →</a>
  </div>
  </div>
 </section>
@@ -1305,6 +1332,30 @@ section[id] { scroll-margin-top: 80px; }
 </div>
 </div>
 </section>
+<!-- Partner recruitment callout -->
+<section class="sec partner-callout" aria-label="Become a partner">
+  <div class="wrap">
+    <p class="sec-label">For Chicagoland service businesses</p>
+    <h2>Help new businesses launch. <em>Become a partner.</em></h2>
+    <p class="lede">We're actively recruiting partners across <strong>nine service categories</strong> — attorneys, accountants, banks, payroll, web designers, printers, marketing agencies, insurance brokers, and commercial real estate. As a partner, you contribute one specific service free or at significantly reduced cost. In return: prominent credit, direct relationships with new Chicagoland businesses, and an early seat at a growing program.</p>
+    <div class="partner-callout-cats">
+      <span>Attorneys</span>
+      <span>Accountants</span>
+      <span>Banks</span>
+      <span>Payroll</span>
+      <span>Web design</span>
+      <span>Printers</span>
+      <span>Marketing</span>
+      <span>Insurance</span>
+      <span>Commercial RE</span>
+    </div>
+    <div class="partner-callout-cta">
+      <a class="btn-primary" href="/partners/#apply">Apply to partner →</a>
+      <a class="btn-ghost" href="/partners/">How partner onboarding works</a>
+    </div>
+  </div>
+</section>
+
 
 <section class="sec bordered">
 <div class="wrap">
@@ -1359,6 +1410,17 @@ section[id] { scroll-margin-top: 80px; }
  <input type="checkbox" name="want_graphics"/>
  <input type="checkbox" name="want_property"/>
  <textarea name="notes"></textarea>
+</form>
+<form name="tnbp-partner" data-netlify="true" netlify-honeypot="bot-field" hidden>
+<input type="text" name="contact_name"/>
+<input type="text" name="business_name"/>
+<input type="email" name="email"/>
+<input type="url" name="website"/>
+<select name="category"><option value=""></option><option value="attorney"></option></select>
+<textarea name="offer"></textarea>
+<input type="text" name="years_in_business"/>
+<textarea name="notes"></textarea>
+<input type="text" name="bot-field"/>
 </form>
 
 </body>
